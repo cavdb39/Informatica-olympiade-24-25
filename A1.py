@@ -1,8 +1,3 @@
-import math
+word = input("Voer woord in: ")
 
-woord = input("Voer woord in: ")
-
-lowerMiddleIndex = math.floor((len(woord)+1)/2)
-upperMiddleIndex = math.ceil((len(woord)+3)/2)
-
-print(woord[lowerMiddleIndex:upperMiddleIndex])
+print(word[(len(word) - 1)//2 : (len(word)//2 + 1)])
