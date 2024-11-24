@@ -11,13 +11,17 @@ end_inputs = [float(i) for i in end_raw.split(":")]
 end_inputs = [0.0] * (3 - len(end_inputs)) + end_inputs
 
 # Calculate total seconds and difference
-begin_total_ms = int(1000*(begin_inputs[0]*3600+begin_inputs[1]*60+begin_inputs[2]))
-end_total_ms = int(1000*(end_inputs[0]*3600+end_inputs[1]*60+end_inputs[2]))
+begin_total_ms = int(
+    1000 * (begin_inputs[0] * 3600 + begin_inputs[1] * 60 + begin_inputs[2])
+)
+end_total_ms = int(1000 * (end_inputs[0] * 3600 + end_inputs[1] * 60 + end_inputs[2]))
 net_total_ms = end_total_ms - begin_total_ms
 
 # Raise error if begin time is greater than end time
 if net_total_ms < 0:
-    raise ValueError(f"Begin time ({begin_total_ms}) cannot be greater than end time({end_total_ms}).")
+    raise ValueError(
+        f"Begin time ({begin_total_ms}) cannot be greater than end time({end_total_ms})."
+    )
 
 # Convert back to hours, minutes, seconds
 hours = net_total_ms // 3600000
