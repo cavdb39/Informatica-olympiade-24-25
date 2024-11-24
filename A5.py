@@ -24,6 +24,3 @@ full_operation = input()
 # Construct list
 cards = [i for i in range(1, 2 * N + 1)]
 print(cards)
-
-shuffle("l")
-print(cards)
