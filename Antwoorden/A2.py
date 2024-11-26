@@ -1,6 +1,6 @@
 # Take inputs
-begin_raw = input("Begintijd: ").replace(",", ".")
-end_raw = input("Eindtijd:  ").replace(",", ".")
+begin_raw = input().replace(",", ".")
+end_raw = input().replace(",", ".")
 
 # Unpack lists
 begin_inputs = [float(i) for i in begin_raw.split(":")]

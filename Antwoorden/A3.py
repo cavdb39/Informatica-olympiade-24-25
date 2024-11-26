@@ -1,6 +1,5 @@
-start_num = int(input("Enter number: "))
+start_num = int(input())
 
-print(type(start_num))
 
 def nio_value(num: int):
     digits = [int(d) for d in str(num)]
@@ -8,6 +7,7 @@ def nio_value(num: int):
     for i in range(len(digits)):
         value += (i + 1) * digits[i]
     return value
+
 
 old_value = start_num
 new_value = nio_value(old_value)

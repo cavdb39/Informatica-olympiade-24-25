@@ -1,6 +1,6 @@
 # Handle input
 N = int(input())
-operation = input()
+operation = input().lower()
 
 # Construct list
 cards = [i for i in range(1, 2 * N + 1)]
@@ -44,6 +44,7 @@ for task in split_operation:
             remaining = text[1:] if len(text) > 1 else ""
             processed_operation += num * text[0] + remaining
         else:
+            # (a)b
             a = text[start_index + 1 : end_index]
             b = text[end_index + 1 :]
 
@@ -56,7 +57,8 @@ for task in split_operation:
                 remaining = a[index_2 + 1 :] if index_2 + 1 < len(a) else ""
                 a = int(a[:index_2]) * a[index_2] + remaining
             else:
-                a[index_2]
+                # print(index_2)
+                pass
 
             processed_operation += num * a + b
     else:
@@ -65,7 +67,6 @@ for task in split_operation:
 
 for char in processed_operation:
     if char not in {"b", "r", "l"}:
-        print("skipping invalid mode:", char)
         continue
 
     if char == "b":
@@ -84,4 +85,7 @@ for char in processed_operation:
         cards = shuffled_cards
         shuffled_cards = []
 
-print(cards)
+for card in cards[:-1]:
+    print(card, end=" ")
+
+print(cards[-1], end="")

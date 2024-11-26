@@ -1,5 +1,5 @@
 # Read inputs
-N, M = map(int, input("[N M]: ").split())
+N, M = map(int, input().split())
 
 adj_dict = {i: [] for i in range(1, N + 1)}
 
